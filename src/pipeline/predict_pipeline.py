@@ -12,7 +12,7 @@ class PredictPipeline:
     def predict(self,features):
         try:
             model_path=os.path.join("artifacts","model.pkl")
-            preprocessor_path=os.path.join('artifacts','preprocessor.pkl')
+            preprocessor_path=os.path.join("artifacts","preprocessor.pkl")
             print("Before Loading")
             model=load_object(file_path=model_path)
             preprocessor=load_object(file_path=preprocessor_path)
@@ -31,21 +31,13 @@ class CustomData:
         bmi: int,
         children: int,
         smoker: str,
-        charges: int,
         region: str):
 
         self.age = age
-
         self.sex = sex
-
         self.bmi = bmi
-
         self.children = children
-
         self.smoker = smoker
-
-        self.charges = charges
-
         self.region = region
 
     def get_data_as_data_frame(self):
@@ -56,7 +48,6 @@ class CustomData:
                 'bmi':[self.bmi],
                 'children':[self.children],
                 'smoker':[self.smoker],
-                'charges':[self.charges],
                 'region':[self.region],
             }
 
